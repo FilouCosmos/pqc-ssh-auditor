@@ -4,7 +4,7 @@ Avec l'avènement des ordinateurs quantiques, les algorithmes de chiffrement asy
 
 Ce script d'audit (idéal pour les équipes SecOps/SRE) scanne automatiquement les clés SSH publiques de vos serveurs Linux pour évaluer leur "Quantum Readiness". Il identifie les clés vulnérables et valide la présence d'algorithmes hybrides ou post-quantiques (ex: `ssh-ed25519` ou `sntrup761x25519-sha512@openssh.com`).
 
-## 🏗️ Flux de l'Audit Cryptographique
+##  Flux de l'Audit Cryptographique
 
 ```mermaid
 flowchart TD
