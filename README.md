@@ -8,13 +8,14 @@ Ce script d'audit (idéal pour les équipes SecOps/SRE) scanne automatiquement l
 
 ```mermaid
 flowchart TD
-    A[Lancement de l'Audit] --> B(Scan du dossier /etc/ssh/)
-    B --> C{Fichier .pub trouvé ?}
-    C -- Oui --> D[Analyse via l'outil natif ssh-keygen]
-    D --> E{Évaluation de l'Algorithme}
-    E -- RSA / ECDSA --> F[⚠️ ALERTE : Vulnérable (Algorithme de Shor)]
-    E -- ED25519 / SNTRUP --> G[✅ VALIDÉ : Post-Quantum Safe]
+    A["Lancement de l'Audit"] --> B("Scan du dossier /etc/ssh/")
+    B --> C{"Fichier .pub trouvé ?"}
+    C -- "Oui" --> D["Analyse via l'outil natif ssh-keygen"]
+    D --> E{"Évaluation de l'Algorithme"}
+    E -- "RSA / ECDSA" --> F["⚠️ ALERTE : Vulnérable (Algorithme de Shor)"]
+    E -- "ED25519 / SNTRUP" --> G["✅ VALIDÉ : Post-Quantum Safe"]
 ```
+
 # Fonctionnalités
 Zéro Dépendance : Utilise exclusivement la bibliothèque standard Python et les binaires natifs de l'OS (aucun pip install requis).
 
